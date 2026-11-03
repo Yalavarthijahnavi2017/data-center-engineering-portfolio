@@ -1,0 +1,4 @@
+Nov  3 10:00:00 sim-node01 kernel: hardware error: CPU 0 machine check
+Nov  3 10:01:00 sim-node01 kernel: link down on eth0
+Nov  3 10:02:00 sim-node01 kernel: normal system startup complete
+Nov  3 10:03:00 sim-node01 kernel: drive degraded on sdb

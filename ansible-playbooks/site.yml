@@ -1,0 +1,27 @@
+---
+- name: Apply Baseline Utilities to Virtual Simulation Cluster
+  hosts: virtual_nodes
+  become: yes
+  tasks:
+    - name: Ensure standard diagnostic tools are present
+      ansible.builtin.package:
+        name:
+          - ethtool
+          - smartmontools
+          - net-tools
+        state: present
+
+    - name: Configure standard virtual syslog forwarding
+      ansible.builtin.copy:
+        content: "*.* @@virtual-collector.local:514"
+        dest: /etc/rsyslog.d/60-simulation-forward.conf
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Reload Syslog
+
+  handlers:
+    - name: Reload Syslog
+      ansible.builtin.systemd:
+        name: rsyslog
+        state: restarted

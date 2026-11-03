@@ -1,0 +1,7 @@
+{
+  "Temperatures": [
+    {"Name": "Inlet Temp", "ReadingCelsius": 23, "Status": {"Health": "OK"}},
+    {"Name": "CPU1 Temp", "ReadingCelsius": 41, "Status": {"Health": "OK"}},
+    {"Name": "CPU2 Temp", "ReadingCelsius": 39, "Status": {"Health": "OK"}}
+  ]
+}
